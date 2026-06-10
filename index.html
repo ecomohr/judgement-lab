@@ -5,9 +5,18 @@
     <title>Judgment Lab</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <h1>Judgement Lab</h1>
+    <h3>Teach AI how to evaluate things the way you would.</h3>
+    <div className="py-4 px-4">
+        <label for="models">Choose your model provider:</label>
+        <select name="model" id="model">
+          <option value="">--Please choose an option--</option>
+          <option value="openai">chatGPT</option>
+          <option value="anthropic">Claude</option>
+        </select>
+    </div>
     
     <!-- This line connects your JavaScript file -->
-    <!-- <script src="script.js"></script>  -->
+    <script src="script.js"></script> 
 </body>
 </html>
