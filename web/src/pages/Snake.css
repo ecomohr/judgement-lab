@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  flex: auto;
+  box-sizing: border-box;
+}
+
+p {
+    color:rgb(106, 106, 104) !important;
+}
+
+.gameOver {
+    color:brown !important;
+    text-align: center;
+}
+
+.gameOn {
+    color:rgb(42, 165, 61) !important;
+    text-align: center;
+}

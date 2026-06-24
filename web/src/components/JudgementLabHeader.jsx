@@ -2,7 +2,10 @@ export default function Header() {
   return (
     <header style={styles.header}>
       <div>
-        <h1 style={styles.title}>EK From The Bay</h1>
+        <h1 style={styles.title}>Judgment Lab</h1>
+        <p style={styles.subtitle}>
+          Teach AI how to evaluate things the way you would.
+        </p>
       </div>
     </header>
   );

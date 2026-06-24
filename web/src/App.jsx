@@ -1,26 +1,16 @@
-import { useState } from "react";
-import Header from "./components/Header";
-import PromptBox from "./components/PromptBox";
-import ExamplesList from "./components/ExamplesList";
-import ResultsPanel from "./components/ResultsPanel";
+import { Routes, Route } from "react-router-dom";
+
+import HomePage from "./pages/Homepage";
+import JudgementLab from "./pages/JudgementLab";
+import SnakeGame from "./pages/Snake";
 
 export default function App() {
-  const [prompt, setPrompt] = useState("");
-  const [examples, setExamples] = useState([""]);
-  const [results, setResults] = useState([]);
 
   return (
-    <div style={{ padding: 20 }}>
-      <Header />
-
-      <PromptBox prompt={prompt} setPrompt={setPrompt} />
-
-      <ExamplesList
-        examples={examples}
-        setExamples={setExamples}
-      />
-
-      <ResultsPanel results={results} />
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/judgement-lab" element={<JudgementLab />} />
+      <Route path="/snake-game" element={<SnakeGame />} />
+    </Routes>
   );
 }
