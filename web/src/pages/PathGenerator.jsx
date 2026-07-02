@@ -17,8 +17,14 @@ export default function PathGenerator() {
    
 
     return (
-        <div>
-            <div id="leafletmap" style={{height:"50vh"}}></div>
+        <div style={{flexDirection: "row-reverse", display: "flex", alignItems: "flex-start"}}>
+            <div>
+                <h1> Pedestrian Path Pal </h1>
+                <h4> Click the map to lay down a route! </h4>
+                
+
+            </div>
+            <div id="leafletmap" style={{height:"100vh"}}></div>
         </div>
         
     );
