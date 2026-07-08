@@ -1,16 +1,39 @@
-# React + Vite
+Just having some fun + playing around! 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Setup
 
-Currently, two official plugins are available:
+### Frontend (Vite + React)
+```bash
+npm install
+npm run dev
+```
+Runs on http://localhost:5173
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Backend (Express)
+```bash
+cd server
+npm install
+node index.js
+```
+Runs on http://localhost:3001
 
-## React Compiler
+Both need to be running simultaneously (two terminal tabs) for the app to work end to end.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Database (Supabase)
+- Hosted Postgres, free tier — not local
+- Env vars live in `server/.env` 
+- Frontend has its own `.env` with the **publishable** key (safe client-side)
+- New tables: Supabase dashboard → SQL Editor
+- New tables need explicit grants + RLS policies or you'll hit permission errors (see lessons below)
 
-## Expanding the ESLint configuration
+## Weekly tabs
+- Week 1: Basic react app setup with vite server
+- Week 2: Snake
+- Week 3: Path/walk mapper (Leaflet + OSM)
+- Week 4: Backend setup (Express + Supabase) + Guesses calibration 
+- Week 5 (planned): Rebuild guesses API in FastAPI, compare vs. Express
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Lessons learned
+- Supabase tables need explicit grants (`GRANT SELECT, INSERT ON table TO service_role`) even when using the secret key — table-level grants and RLS policies are separate mechanisms and both can block you independently
+- Vite requires `VITE_` prefix on env vars; CRA requires `REACT_APP_` — mismatched prefixes silently return `undefined`
+- `"type": "module"` vs `"type": "commonjs"` in package.json must match your import/export syntax, mixing them throws immediately
