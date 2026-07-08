@@ -4,6 +4,7 @@ import HomePage from "./pages/Homepage";
 import JudgementLab from "./pages/JudgementLab";
 import SnakeGame from "./pages/Snake";
 import PathGenerator from "./pages/PathGenerator";
+import GuessingGame from "./pages/GuessingGame";
 
 export default function App() {
 
@@ -13,6 +14,7 @@ export default function App() {
       <Route path="/judgement-lab" element={<JudgementLab />} />
       <Route path="/snake-game" element={<SnakeGame />} />
       <Route path="/path-generator" element={<PathGenerator />} />
+      <Route path="/guessing-game" element={<GuessingGame />} />
     </Routes>
   );
 }

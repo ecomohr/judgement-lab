@@ -7,6 +7,7 @@ const tabs = [
   { name: "Judgement Lab", path: "/judgement-lab" },
   { name: "Snake", path: "/snake-game" },
   { name: "Path Generator", path: "/path-generator" },
+  { name: "Guessing Game", path: "/guessing-game" },
   // { name: "About", path: "/about" },
 ];
 
@@ -55,6 +56,15 @@ export default function HomePage() {
               <h2>{"[WIP] Path Generator"}</h2>
               <p>
                 A pedestrian's guide to buidling the best path!
+              </p>
+            </Link>
+          </div>
+
+          <div className="card">
+            <Link to="/guessing-game">
+              <h2>{"[WIP] Guessing Game"}</h2>
+              <p>
+                Take your best guess!
               </p>
             </Link>
           </div>
